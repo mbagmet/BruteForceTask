@@ -10,12 +10,13 @@
 		264DFEDE260D07EF0035EA15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264DFEDD260D07EF0035EA15 /* AppDelegate.swift */; };
 		264DFEE0260D07EF0035EA15 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264DFEDF260D07EF0035EA15 /* SceneDelegate.swift */; };
 		264DFEE2260D07EF0035EA15 /* AuthorizationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264DFEE1260D07EF0035EA15 /* AuthorizationController.swift */; };
-		264DFEE5260D07EF0035EA15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 264DFEE3260D07EF0035EA15 /* Main.storyboard */; };
 		264DFEE7260D07F00035EA15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 264DFEE6260D07F00035EA15 /* Assets.xcassets */; };
 		264DFEEA260D07F00035EA15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 264DFEE8260D07F00035EA15 /* LaunchScreen.storyboard */; };
 		D931A478282EC61C007A66C4 /* AuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D931A477282EC61C007A66C4 /* AuthorizationView.swift */; };
 		D931A47B282ECD6C007A66C4 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D931A47A282ECD6C007A66C4 /* String+Ext.swift */; };
 		D931A47D282ECE82007A66C4 /* BruteForce.swift in Sources */ = {isa = PBXBuildFile; fileRef = D931A47C282ECE82007A66C4 /* BruteForce.swift */; };
+		D931A4BD282F1F20007A66C4 /* AuthorizationViewUserIterations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D931A4BC282F1F20007A66C4 /* AuthorizationViewUserIterations.swift */; };
+		D931A4C0282F1F95007A66C4 /* AuthorizationViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D931A4BF282F1F95007A66C4 /* AuthorizationViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,13 +24,14 @@
 		264DFEDD260D07EF0035EA15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		264DFEDF260D07EF0035EA15 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		264DFEE1260D07EF0035EA15 /* AuthorizationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationController.swift; sourceTree = "<group>"; };
-		264DFEE4260D07EF0035EA15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		264DFEE6260D07F00035EA15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		264DFEE9260D07F00035EA15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		264DFEEB260D07F00035EA15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D931A477282EC61C007A66C4 /* AuthorizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationView.swift; sourceTree = "<group>"; };
 		D931A47A282ECD6C007A66C4 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		D931A47C282ECE82007A66C4 /* BruteForce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BruteForce.swift; sourceTree = "<group>"; };
+		D931A4BC282F1F20007A66C4 /* AuthorizationViewUserIterations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewUserIterations.swift; sourceTree = "<group>"; };
+		D931A4BF282F1F95007A66C4 /* AuthorizationViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +83,6 @@
 		D931A471282EC331007A66C4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				264DFEE3260D07EF0035EA15 /* Main.storyboard */,
 				264DFEE6260D07F00035EA15 /* Assets.xcassets */,
 				264DFEE8260D07F00035EA15 /* LaunchScreen.storyboard */,
 				264DFEEB260D07F00035EA15 /* Info.plist */,
@@ -119,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				D931A477282EC61C007A66C4 /* AuthorizationView.swift */,
+				D931A4BB282F1EE1007A66C4 /* Protocols */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -128,6 +130,7 @@
 			children = (
 				264DFEE1260D07EF0035EA15 /* AuthorizationController.swift */,
 				D931A47C282ECE82007A66C4 /* BruteForce.swift */,
+				D931A4BE282F1F75007A66C4 /* Protocols */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -138,6 +141,22 @@
 				D931A47A282ECD6C007A66C4 /* String+Ext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D931A4BB282F1EE1007A66C4 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D931A4BC282F1F20007A66C4 /* AuthorizationViewUserIterations.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D931A4BE282F1F75007A66C4 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D931A4BF282F1F95007A66C4 /* AuthorizationViewDelegate.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,7 +218,6 @@
 			files = (
 				264DFEEA260D07F00035EA15 /* LaunchScreen.storyboard in Resources */,
 				264DFEE7260D07F00035EA15 /* Assets.xcassets in Resources */,
-				264DFEE5260D07EF0035EA15 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +228,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D931A4BD282F1F20007A66C4 /* AuthorizationViewUserIterations.swift in Sources */,
+				D931A4C0282F1F95007A66C4 /* AuthorizationViewDelegate.swift in Sources */,
 				264DFEE2260D07EF0035EA15 /* AuthorizationController.swift in Sources */,
 				264DFEDE260D07EF0035EA15 /* AppDelegate.swift in Sources */,
 				D931A47D282ECE82007A66C4 /* BruteForce.swift in Sources */,
@@ -222,14 +242,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		264DFEE3260D07EF0035EA15 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				264DFEE4260D07EF0035EA15 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		264DFEE8260D07F00035EA15 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
