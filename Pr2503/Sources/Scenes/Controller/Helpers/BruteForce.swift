@@ -18,7 +18,7 @@ class BruteForce {
             print(password)
         }
         
-        print(password)
+        print("Подобранный пароль: \(password)")
     }
 
     func generate(_ string: String, fromArray array: [String]) -> String {

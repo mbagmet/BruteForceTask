@@ -9,4 +9,5 @@ import UIKit
 
 protocol AuthorizationViewDelegate {
     func changeNavigationTitleColor(color: UIColor)
+    func generatePasswordAndBruteForce()
 }

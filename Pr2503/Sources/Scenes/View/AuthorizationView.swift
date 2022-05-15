@@ -138,7 +138,7 @@ extension AuthorizationView {
     }
     
     @objc private func generatePasswordButtonTappedAction(_ sender: Any) {
-        // TODO
+        delegate?.generatePasswordAndBruteForce()
     }
 }
 

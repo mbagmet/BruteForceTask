@@ -17,6 +17,7 @@
 		D931A47D282ECE82007A66C4 /* BruteForce.swift in Sources */ = {isa = PBXBuildFile; fileRef = D931A47C282ECE82007A66C4 /* BruteForce.swift */; };
 		D931A4BD282F1F20007A66C4 /* AuthorizationViewUserIterations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D931A4BC282F1F20007A66C4 /* AuthorizationViewUserIterations.swift */; };
 		D931A4C0282F1F95007A66C4 /* AuthorizationViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D931A4BF282F1F95007A66C4 /* AuthorizationViewDelegate.swift */; };
+		D93CE63D28319C8700A845D6 /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93CE63C28319C8700A845D6 /* Password.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		D931A47C282ECE82007A66C4 /* BruteForce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BruteForce.swift; sourceTree = "<group>"; };
 		D931A4BC282F1F20007A66C4 /* AuthorizationViewUserIterations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewUserIterations.swift; sourceTree = "<group>"; };
 		D931A4BF282F1F95007A66C4 /* AuthorizationViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewDelegate.swift; sourceTree = "<group>"; };
+		D93CE63C28319C8700A845D6 /* Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Password.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				264DFEE1260D07EF0035EA15 /* AuthorizationController.swift */,
-				D931A47C282ECE82007A66C4 /* BruteForce.swift */,
+				D93CE63E28319CAF00A845D6 /* Helpers */,
 				D931A4BE282F1F75007A66C4 /* Protocols */,
 			);
 			path = Controller;
@@ -157,6 +159,15 @@
 				D931A4BF282F1F95007A66C4 /* AuthorizationViewDelegate.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D93CE63E28319CAF00A845D6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D931A47C282ECE82007A66C4 /* BruteForce.swift */,
+				D93CE63C28319C8700A845D6 /* Password.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D93CE63D28319C8700A845D6 /* Password.swift in Sources */,
 				D931A4BD282F1F20007A66C4 /* AuthorizationViewUserIterations.swift in Sources */,
 				D931A4C0282F1F95007A66C4 /* AuthorizationViewDelegate.swift in Sources */,
 				264DFEE2260D07EF0035EA15 /* AuthorizationController.swift in Sources */,

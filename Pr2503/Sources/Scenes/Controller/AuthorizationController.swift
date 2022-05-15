@@ -17,6 +17,7 @@ class AuthorizationController: UIViewController {
     }
     
     private var bruteForce = BruteForce()
+    private var password = Password()
     
     // MARK: - Lifecycle
     
@@ -27,10 +28,6 @@ class AuthorizationController: UIViewController {
         setupNavigation()
         
         configureViewDelegate()
-        
-        self.bruteForce.start(passwordToUnlock: "1"/*"1!gr"*/)
-        
-        // Do any additional setup after loading the view.
     }
 }
 
@@ -50,6 +47,9 @@ extension AuthorizationController: AuthorizationViewDelegate {
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: color]
     }
     
+    func generatePasswordAndBruteForce() {
+        self.bruteForce.start(passwordToUnlock: self.password.generatePassword(minLength: 4, maxLength: 5))
+    }
 }
 
 // MARK: - Configuration
