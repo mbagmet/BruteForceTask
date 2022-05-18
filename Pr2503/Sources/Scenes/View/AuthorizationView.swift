@@ -135,7 +135,6 @@ class AuthorizationView: UIView, AuthorizationViewUserIterations {
 extension AuthorizationView {
     @objc private func changeColorButtonTappedAction(_ sender: Any) {
         isBlack.toggle()
-        print(Thread.current)
     }
     
     @objc private func generatePasswordButtonTappedAction(_ sender: Any) {
