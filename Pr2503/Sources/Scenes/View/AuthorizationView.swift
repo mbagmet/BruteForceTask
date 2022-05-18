@@ -31,7 +31,7 @@ class AuthorizationView: UIView, AuthorizationViewUserIterations {
     
     private lazy var passwordStackView = createStackView(axis: .vertical, distribution: .equalSpacing)
     
-    private lazy var passwordLabel: UILabel = {
+    lazy var passwordLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
         label.numberOfLines = 1
@@ -42,7 +42,7 @@ class AuthorizationView: UIView, AuthorizationViewUserIterations {
         return label
     }()
     
-    private lazy var passwordField: UITextField = {
+    lazy var passwordField: UITextField = {
         let textField = UITextField()
         textField.isSecureTextEntry = true
         textField.placeholder = Strings.passwordFieldPlaceholder
@@ -52,7 +52,7 @@ class AuthorizationView: UIView, AuthorizationViewUserIterations {
     
     private lazy var buttonsStackView = createStackView(axis: .horizontal, distribution: .fillEqually)
     
-    private lazy var generatePasswordButton = createButton(with: Strings.generatePasswordButtonTitle,
+    lazy var generatePasswordButton = createButton(with: Strings.generatePasswordButtonTitle,
                                                            backgroundColor: .systemBlue,
                                                            action: #selector(generatePasswordButtonTappedAction(_:)))
     
@@ -100,8 +100,8 @@ class AuthorizationView: UIView, AuthorizationViewUserIterations {
     
     // MARK: - Private functions
 
-    private func createButton(with title: String, backgroundColor: UIColor, action: Selector) -> UIButton {
-        let button = UIButton(type: .system)
+    private func createButton(with title: String, backgroundColor: UIColor, action: Selector) -> LoadingButton {
+        let button = LoadingButton(type: .system)
         button.setTitle(title, for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: Metric.buttonFontSize, weight: .regular)
@@ -135,10 +135,11 @@ class AuthorizationView: UIView, AuthorizationViewUserIterations {
 extension AuthorizationView {
     @objc private func changeColorButtonTappedAction(_ sender: Any) {
         isBlack.toggle()
+        print(Thread.current)
     }
     
     @objc private func generatePasswordButtonTappedAction(_ sender: Any) {
-        delegate?.generatePasswordAndBruteForce()
+        delegate?.startPasswordGenerationAndBruteForce()
     }
 }
 
@@ -159,7 +160,7 @@ extension AuthorizationView {
     }
     
     enum Strings {
-        static let generatePasswordButtonTitle = "Подобрать пароль"
+        static let generatePasswordButtonTitle = "Подобрать"
         static let changeColorButtonTitle = "Сменить цвет"
         static let passwordLabelTitle = "Пароль"
         static let passwordFieldPlaceholder = "введите пароль"

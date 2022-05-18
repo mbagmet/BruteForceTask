@@ -8,7 +8,9 @@
 import Foundation
 
 class Password {
-    func generatePassword(minLength: Int, maxLength: Int) -> String {
+    var generatedPassword: String = ""
+    
+    private func generatePassword(minLength: Int, maxLength: Int) -> String {
         let allowedCharacters: [String] = String().printable.map { String($0) }
         
         var password: String = ""
@@ -23,5 +25,20 @@ class Password {
         print("Сгенерирован пароль: \(password)")
         
         return password
+    }
+    
+    func startPasswordGeneration(queue: DispatchQueue = DispatchQueue.global(qos: .default), complition: @escaping () -> ()) {
+        
+        let workItem = DispatchWorkItem {
+            print("Генерируем пароль: \(Thread.current)")
+            self.generatedPassword = self.generatePassword(minLength: 3, maxLength: 3)
+        }
+        
+        workItem.notify(queue: .main) {
+            print("Поработаем с интерфейсом: \(Thread.current)")
+            complition()
+        }
+        
+        queue.async(execute: workItem)
     }
 }

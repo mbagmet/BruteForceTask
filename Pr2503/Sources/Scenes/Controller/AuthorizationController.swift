@@ -47,8 +47,23 @@ extension AuthorizationController: AuthorizationViewDelegate {
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: color]
     }
     
-    func generatePasswordAndBruteForce() {
-        self.bruteForce.start(passwordToUnlock: self.password.generatePassword(minLength: 4, maxLength: 5))
+    func startPasswordGenerationAndBruteForce() {
+        self.authorizationView?.passwordField.isSecureTextEntry = true
+        self.authorizationView?.passwordLabel.text = Strings.generatePasswordTitle
+        self.authorizationView?.generatePasswordButton.showLoading()
+        
+        var passwordToUnlock: String = ""
+        
+        self.password.startPasswordGeneration() {
+            passwordToUnlock = self.password.generatedPassword
+            self.authorizationView?.passwordField.text = passwordToUnlock
+            
+            self.bruteForce.start(passwordToUnlock: passwordToUnlock) {
+                self.authorizationView?.passwordField.isSecureTextEntry = false
+                self.authorizationView?.passwordLabel.text = self.bruteForce.password
+                self.authorizationView?.generatePasswordButton.hideLoading()
+            }
+        }
     }
 }
 
@@ -65,5 +80,6 @@ private extension AuthorizationController {
 extension AuthorizationController {
     enum Strings {
         static let navigationTitle = "Авторизация"
+        static let generatePasswordTitle = "Подбираем пароль..."
     }
 }

@@ -8,17 +8,33 @@
 import Foundation
 
 class BruteForce {
-    func start(passwordToUnlock: String) {
-        let allowedCharacters: [String] = String().printable.map { String($0) }
+    var password: String = ""
+    
+    func start(passwordToUnlock: String, queue: DispatchQueue = DispatchQueue.global(qos: .utility), complition: @escaping () -> ()) {
+        
+        let workItem = DispatchWorkItem {
+            print("Начинаем подбор пароля \(Thread.current)")
 
-        var password: String = ""
+            let allowedCharacters: [String] = String().printable.map { String($0) }
+            
+            var password = ""
 
-        while password != passwordToUnlock {
-            password = generate(password, fromArray: allowedCharacters)
-            print(password)
+            while password != passwordToUnlock {
+                password = self.generate(password, fromArray: allowedCharacters)
+                print(password)
+            }
+            self.password = password
+            
+            print("Закончили побдор пароля: \(Thread.current)")
+            print("Подобранный пароль: \(self.password)")
         }
         
-        print("Подобранный пароль: \(password)")
+        workItem.notify(queue: .main) {
+            print("Снова поработаем с интерфейсом: \(Thread.current)")
+            complition()
+        }
+        
+        queue.async(execute: workItem)
     }
 
     func generate(_ string: String, fromArray array: [String]) -> String {
