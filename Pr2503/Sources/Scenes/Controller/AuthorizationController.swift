@@ -52,7 +52,7 @@ extension AuthorizationController: AuthorizationViewDelegate {
         self.authorizationView?.passwordLabel.text = Strings.generatePasswordTitle
         self.authorizationView?.generatePasswordButton.showLoading()
         
-        var passwordToUnlock: String = ""
+        var passwordToUnlock = ""
         
         self.password.startPasswordGeneration() {
             passwordToUnlock = self.password.generatedPassword
